@@ -1,6 +1,5 @@
 import { prisma } from "../config/db";
 
-// Create a method where messages get stored in the database
 class DatabaseManager {
   private static instance: DatabaseManager;
 

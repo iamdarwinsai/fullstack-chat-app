@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import JWT from "jsonwebtoken";
 import httpStatus from "http-status";
-
 import utilities from "../utils/env";
-
 const jwtKey = utilities.JWT_SECRET;
 export const auth = async (req: Request, res: Response, next: NextFunction) => {
   try {
