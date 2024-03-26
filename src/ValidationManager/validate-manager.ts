@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 import { prisma } from "../config/db";
-import utilities from "../utils/env";
 
 //Validate roomId -> once validated store in redis cache
 //validate UserId with JWT
@@ -43,6 +42,7 @@ export class ValidateUser {
 
   public static getInstance(): ValidateUser {
     if (!ValidateUser.instance) {
+      console.log("Creating new ValidateUser instance");
       ValidateUser.instance = new ValidateUser();
     }
     return ValidateUser.instance;

@@ -14,7 +14,6 @@ import { z } from "zod";
         type:"SEND_MESSAGE",
         payload:{
             message:"Why?"
-            roomId:"blahblah"
         }
     }
 
@@ -66,9 +65,7 @@ const joinMessage = z.object({
 export type JoinMessageType = z.infer<typeof joinMessage>;
 
 const sendMessage = z.object({
-  userId: z.string(),
   message: z.string(),
-  roomId: z.string(),
 });
 
 export type SendMessageType = z.infer<typeof sendMessage>;

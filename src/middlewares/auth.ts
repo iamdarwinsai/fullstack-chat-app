@@ -16,6 +16,8 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
     const decoded = await JWT.verify(token, jwtKey);
     //@ts-ignore
     req.user = decoded;
+    //@ts-ignore
+    console.log(req.user);
     next();
   } catch (error) {
     //@ts-ignore
